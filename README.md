@@ -44,3 +44,8 @@
 * Generate a token in Sonarqube and add it to Jenkins credentials. 
 * In Jenkins "Configure system", add Sonarqube server details.
 * In Sonarqube server, generate a webhook for Jenkins so that SQ informs Jenkins when analysis is finished.
+
+// Artifactory integration //
+* Install OpenJDK11 in an EC2 instance with SG 8081 and 8082 open.
+* Download Artifactoy package inside /opt, extract and run it.
+* 
