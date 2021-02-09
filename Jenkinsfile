@@ -25,11 +25,24 @@ pipeline {
                 }
             }
         }  
- 
+        stage("SonarQube analysis") {
+            steps {
+                withSonarQubeEnv("sonarqube") {
+                    sh "mvn sonar:sonar"  //Sonarqube analysis
+                }
+            }
+        }
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 1, unit: "HOURS") {   // Wait for Quality gate 
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
     }     
     post {
         always {
-          //  deleteDir() //Clean the workspace post completion
+            deleteDir() //Clean the workspace post completion
             }
         }
 }
