@@ -25,7 +25,7 @@ pipeline {
                 }
             }
         }  
-        stage("SonarQube analysis") {
+  /*      stage("SonarQube analysis") {
             steps {
                 withSonarQubeEnv("sonarqube") {
                     sh "mvn sonar:sonar"  //Sonarqube analysis
@@ -38,11 +38,11 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }
+        } */
     }     
     post {
         always {
-            deleteDir() //Clean the workspace post completion
+          //  deleteDir() //Clean the workspace post completion
             }
         }
 }
