@@ -48,4 +48,8 @@
 // Artifactory integration //
 * Install OpenJDK11 in an EC2 instance with SG 8081 and 8082 open.
 * Download Artifactoy package inside /opt, extract and run it.
-* 
+
+// Jenkinfile //
+* Secrets can be injected into Jenkinfile by first defining it in "credentials" then using "withCredentials"
+* Environment variables can be defined using "environment" in Jenkinfile.
+* "post" specified action to be taken in case of an event. Eg events can be always, unstable, success, failure etc.
